@@ -60,10 +60,10 @@ class BreakDOM {
   }
 
   createEnemies() {
-    for (var i = 0; i < this.rows; i++) {
-      for (var j = 0; j < this.columns; j++) {
-        var type = Math.random() > 0.5 ? "radio" : "checkbox";
-        var element = $('<input type="' + type + '" checked>').appendTo(
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.columns; j++) {
+        const type = Math.random() > 0.5 ? "radio" : "checkbox";
+        const element = $('<input type="' + type + '" checked>').appendTo(
           this.dom.enemies
         );
 
@@ -79,7 +79,7 @@ class BreakDOM {
   }
 
   createPaddle() {
-    var pw = this.width;
+    let pw = this.width;
 
     if (navigator.appVersion.match(/Mac/gi)) {
       pw += 28;
@@ -151,7 +151,7 @@ class BreakDOM {
     if (this.key.rightDown)
       this.scrollX = Math.min(this.scrollX + 0.02, 1 - this.paddleFactor / 2);
 
-    var playerPosition = this.player.position();
+    const playerPosition = this.player.position();
 
     if (playerPosition.x < 0) {
       this.player.velocity.x = Math.abs(this.player.velocity.x);
@@ -163,14 +163,14 @@ class BreakDOM {
       this.player.velocity.y = Math.abs(this.player.velocity.y);
     } else if (playerPosition.y > this.height - 35) {
       if (playerPosition.y < this.height) {
-        var paddleStartX = Math.max(
+        const paddleStartX = Math.max(
           Math.min(
             this.scrollX * this.width - this.paddleWidth / 2,
             this.width - this.paddleWidth
           ),
           0
         );
-        var paddleEndX = paddleStartX + this.paddleWidth;
+        const paddleEndX = paddleStartX + this.paddleWidth;
 
         if (
           playerPosition.x + this.playerWidth >= paddleStartX &&
@@ -192,14 +192,13 @@ class BreakDOM {
 
     this.player.step();
 
-    var i = this.enemies.length;
-
-    var updateCount = false;
-    var enemyCount = 0;
+    let i = this.enemies.length;
+    let updateCount = false;
+    let enemyCount = 0;
 
     while (i--) {
-      var enemy = this.enemies[i];
-      var enemyPosition = enemy.position();
+      const enemy = this.enemies[i];
+      const enemyPosition = enemy.position();
 
       if (enemy.falling) {
         enemy.step();
