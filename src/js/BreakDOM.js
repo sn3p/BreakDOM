@@ -3,7 +3,14 @@ import Enemy from "./Enemy";
 import Player from "./Player";
 
 class BreakDOM {
-  constructor() {
+  constructor(options) {
+    this.options = Object.assign(
+      {
+        showCounter: true
+      },
+      options
+    );
+
     this.dom = {};
     this.dom.container = $("#breakdom");
     this.dom.counter = $('<div id="counter" />').appendTo(this.dom.container);
@@ -183,7 +190,7 @@ class BreakDOM {
     this.player.step();
 
     let i = this.enemies.length;
-    let updateCount = false;
+    let updateCounter = false;
     let enemyCount = 0;
 
     while (i--) {
@@ -203,7 +210,7 @@ class BreakDOM {
           playerPosition.y + this.playerHeight > enemyPosition.y &&
           playerPosition.y < enemyPosition.y + this.enemyHeight
         ) {
-          updateCount = true;
+          updateCounter = true;
 
           enemy.fall();
 
@@ -224,7 +231,7 @@ class BreakDOM {
       }
     }
 
-    if (updateCount) {
+    if (this.options.showCounter && updateCounter) {
       this.dom.counter
         .stop(true, true)
         .fadeTo(50, 0.4)
