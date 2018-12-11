@@ -6,7 +6,8 @@ class BreakDOM {
   constructor(options) {
     this.options = Object.assign(
       {
-        showCounter: true
+        showCounter: true,
+        inputType: null
       },
       options
     );
@@ -69,7 +70,9 @@ class BreakDOM {
   createEnemies() {
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.columns; j++) {
-        const type = Math.random() > 0.5 ? "radio" : "checkbox";
+        const type =
+          this.options.inputType ||
+          (Math.random() > 0.5 ? "radio" : "checkbox");
         const element = $('<input type="' + type + '" checked>').appendTo(
           this.dom.enemies
         );

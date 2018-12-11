@@ -1,7 +1,9 @@
 import BreakDOM from "./js/BreakDOM";
 
 const breakDOM = new BreakDOM({
-  showCounter: false
+  // showCounter: true,
+  // inputType: "radio"
+  // inputType: "checkbox"
 });
 
 breakDOM.start();
