@@ -86,10 +86,6 @@ class BreakDOM {
     }
   }
 
-  createPaddle() {
-    this.dom.paddler.width((1 / this.paddleFactor) * this.width);
-  }
-
   createPlayer() {
     this.player = new Player(this.dom.player);
     this.player.move(
@@ -98,6 +94,10 @@ class BreakDOM {
     );
 
     $('<input type="radio" checked>').appendTo(this.dom.player);
+  }
+
+  createPaddle() {
+    this.dom.paddler.width((1 / this.paddleFactor) * this.width);
   }
 
   mouseMoveHandler = event => {
