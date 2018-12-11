@@ -36,6 +36,10 @@ class BreakDOM {
     this.paddleFactor = 0.25;
     this.paddleWidth = 0.25 * this.width;
     this.scrollX = 0;
+
+    window.addEventListener("mousemove", this.mouseMoveHandler, false);
+    window.addEventListener("keydown", this.keyDownHandler, false);
+    window.addEventListener("keyup", this.keyUpHandler, false);
   }
 
   reset() {
@@ -51,10 +55,6 @@ class BreakDOM {
     this.createEnemies();
     this.createPaddle();
     this.createPlayer();
-
-    window.addEventListener("mousemove", this.mouseMoveHandler, false);
-    window.addEventListener("keydown", this.keyDownHandler, false);
-    window.addEventListener("keyup", this.keyUpHandler, false);
 
     this.update();
   }
