@@ -245,7 +245,7 @@ class BreakDOM {
       this.scrollX * this.dom.paddler.width() - this.paddleWidth * 2
     );
 
-    setTimeout(this.update, 16);
+    requestAnimationFrame(this.update);
   };
 }
 
