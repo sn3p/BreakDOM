@@ -29,7 +29,6 @@ class BreakDOM {
     this.height = this.dom.container.height();
     this.enemies = [];
     this.player = null;
-    this.playing = false;
     this.playerWidth = 14;
     this.playerHeight = 14;
     this.enemyWidth = 15;
@@ -55,7 +54,6 @@ class BreakDOM {
     this.dom.player.empty();
 
     this.enemies = [];
-    this.playing = false;
     this.player = null;
 
     this.dom.counter.text("");
@@ -140,7 +138,6 @@ class BreakDOM {
   start() {
     this.reset();
 
-    this.playing = true;
     this.player.velocity.y = -5;
     this.player.velocity.x = Math.random() > 0.5 ? -4 : 4;
   }
