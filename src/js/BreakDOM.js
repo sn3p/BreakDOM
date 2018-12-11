@@ -79,16 +79,6 @@ class BreakDOM {
   }
 
   createPaddle() {
-    let pw = this.width;
-
-    if (navigator.appVersion.match(/Mac/gi)) {
-      pw += 28;
-    } else if (navigator.appVersion.match(/Win/gi)) {
-      pw += 40;
-      this.dom.paddle.css("left", -20);
-    }
-
-    this.dom.paddle.width(pw);
     this.dom.paddler.width((1 / this.paddleFactor) * this.width);
   }
 
