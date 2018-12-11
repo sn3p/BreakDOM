@@ -8,6 +8,7 @@ body {
 #breakdom {
   background: #eee;
   border-radius: 2px;
+  cursor: none;
   display: inline-block;
   height: 450px;
   left: 50%;
