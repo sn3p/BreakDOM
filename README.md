@@ -2,6 +2,8 @@
 
 A remix of the classic Breakout game using DOM elements (checkboxes, radio buttons, scroll bar).
 
+[**Play now!**](https://sn3p.github.io/BreakDOM/)
+
 Based on an [experiment](https://lab.hakim.se/breakdom/) by Hakim El Hattab.
 
 ## How to use
